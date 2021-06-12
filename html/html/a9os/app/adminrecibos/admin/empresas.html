@@ -1,0 +1,60 @@
+<!--_gtlsc_
+	os.com.ar (a9os) - Open web LAMP framework and desktop environment
+	Copyright (C) 2019-2021  Santiago Pereyra (asp95)
+	
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.-->
+<div class="empresas-list" data-foreach="empresas:currEmpresa">
+	<div class="empresa add" data-preventloop="true" data-id="new">
+		<div class="logo"></div>
+		<div class="title">Nueva empresa</div>
+		<div class="input nombre">
+			Nombre:
+			<input type="text">
+		</div>
+		<div class="input descripcion">
+			Descripción:
+			<input type="text">
+		</div>
+		<div class="input cuit">
+			CUIT:
+			<input type="text">
+		</div>
+		<div class="buttons">
+			<button class="btn edit" disabled>Guardar</button>
+			<button class="btn close">Cerrar</button>
+		</div>
+	</div>
+	<div class="empresa" data-data="id:currEmpresa.id">
+		<div class="logo"></div>
+		<div class="title" data-textcontent="currEmpresa.nombre"></div>
+		<div class="input nombre">
+			Nombre:
+			<input type="text" data-value="currEmpresa.nombre">
+		</div>
+		<div class="input descripcion">
+			Descripción:
+			<input type="text" data-value="currEmpresa.descripcion">
+		</div>
+		<div class="input cuit">
+			CUIT:
+			<input type="text" data-value="currEmpresa.cuit">
+		</div>
+		<div class="buttons">
+			<button class="btn edit" disabled>Guardar</button>
+			<button class="btn close">Cerrar</button>
+		</div>
+	</div>
+	<div class="search-not-found" data-preventloop="true">Sin resultados</div>
+</div>
+<input type="text" class="search" placeholder="Buscar...">

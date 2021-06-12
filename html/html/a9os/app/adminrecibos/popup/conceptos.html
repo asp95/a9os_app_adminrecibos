@@ -1,0 +1,46 @@
+<!--_gtlsc_
+	os.com.ar (a9os) - Open web LAMP framework and desktop environment
+	Copyright (C) 2019-2021  Santiago Pereyra (asp95)
+	
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.-->
+<div class="line empresa" data-data="id:empresaInfo.id">
+	<b>Empresa: </b> <span data-textcontent="empresaInfo.nombre"></span>
+</div>
+<div class="line detalle">
+	<b>Detalle: </b> <input type="text">
+</div>
+<div class="line valor">
+	<b>Valor: </b> <span class="percent">%</span><span class="fixed show">$</span><input type="number" step="0.01"> 
+</div>
+<div class="line type">
+	<b>Tipo de valor: </b>
+	<label>
+		<input type="radio" name="type" value="fixed" checked="true"> Monto fijo
+	</label>
+	<label>
+		<input type="radio" name="type" value="percent"> Porcentaje
+	</label>
+	<label>
+		<input type="radio" name="type" value="none"> Personalizado por empleado
+	</label>
+</div>
+<div class="line qty">
+	<label>
+		<input type="checkbox" name="use_qty"> <b>Usa cantidad</b>
+	</label>
+</div>
+<div class="line buttons">
+	<button class="btn submit" disabled="true">Aceptar</button>
+	<button class="btn cancel">Cancelar</button>
+</div>

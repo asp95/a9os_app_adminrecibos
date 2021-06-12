@@ -1,0 +1,186 @@
+/*_gtlsc_
+ * os.com.ar (a9os) - Open web LAMP framework and desktop environment
+ * Copyright (C) 2019-2021  Santiago Pereyra (asp95)
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.*/
+.a9os_app_adminrecibos_admin_empleados .scroll-container{
+	display: block;
+	position: relative;
+	height: 100%;
+	padding-bottom: 50px;
+	overflow-y: auto;
+	box-sizing: border-box;
+} 
+.a9os_app_adminrecibos_admin_empleados .empresa-selector {
+	display: block;
+	position: relative;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 15px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.a9os_app_adminrecibos_admin_empleados .search {
+	display: block;
+	position: absolute;
+	width: calc(100% - 20px);
+	height: 40px;
+	background-color: #fff;
+	border: none;
+	bottom: 10px;
+	left: 10px;
+	box-sizing: border-box;
+	padding: 10px 20px;
+	line-height: 30px;
+	border-radius: 3px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+
+.a9os_app_adminrecibos_admin_empleados .empleados-list {
+	display: none;
+	text-align: left;
+	width: 100%;
+	padding: 15px 0;
+	box-sizing: border-box;
+
+}
+.a9os_app_adminrecibos_admin_empleados .empleados-list.show {
+	display: block;
+}
+
+.a9os_app_adminrecibos_admin_empleados .empleado {
+	display: inline-block;
+	position: relative;
+	width: 30%;
+	height: 50px;
+	margin: 2px;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.1);
+	vertical-align: top;
+	box-sizing: border-box;
+	border-radius: 5px;
+	opacity: 1;
+	visibility: visible;
+	transition: all 0.2s;
+}
+.is-mobile cmp.a9os_app_adminrecibos_admin_empleados .empleado.add {
+	border-bottom: none;
+	margin-bottom: 10px;
+}
+cmp.a9os_app_adminrecibos_admin_empleados .empleado.add {
+	background-color: rgba(0,0,0,0.2);
+}
+
+
+.a9os_app_adminrecibos_admin_empleados .empleado.show{
+	height: auto;
+	overflow-y: auto;
+	background-color: rgba(0,0,0,0.15);
+}
+.a9os_app_adminrecibos_admin_empleados .empleado:hover {
+	background-color: rgba(0,0,0,0.15);
+}
+.a9os_app_adminrecibos_admin_empleados .empleado.hidden {
+	display: none;
+}
+.is-mobile .a9os_app_adminrecibos_admin_empleados .empleado {
+	width: 100%;
+	margin: 0;
+	border-radius: 0;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	/*box-shadow: inset 0 -1px 0 rgba(0,0,0,0.5);*/
+}
+
+.a9os_app_adminrecibos_admin_empleados .empleado:last-child {
+	box-shadow: none;
+}
+
+.a9os_app_adminrecibos_admin_empleados .empleado .logo {
+	display: block;
+	float: left;
+	width: 40px;
+	height: 50px;
+	margin-left: 5px;
+	background: url(/resources/a9os/app/adminrecibos/employee-icon.svg) center 0 no-repeat;
+	background-size: cover;
+}
+.a9os_app_adminrecibos_admin_empleados .empleado.add .logo{
+	background-image: url(/resources/a9os/app/adminrecibos/employee-add-icon.svg);
+}
+
+.a9os_app_adminrecibos_admin_empleados .empleado .input {
+	display: block;
+	position: relative;
+	width: 95%;
+	margin: 3px 5px;
+	font-size: 12px;
+}
+.a9os_app_adminrecibos_admin_empleados .empleado .input input {
+	display: block;
+	position: relative;
+	width: 100%;
+	margin: 5px 0;
+	box-sizing: border-box;
+	padding: 5px;
+	border: none;
+	font-size: 10px;
+	line-height: 16px;
+	border-radius: 3px
+}
+
+
+.a9os_app_adminrecibos_admin_empleados .empleado .title {
+	width: auto;
+	margin: 0;
+	font-size: 14px;
+	display: block;
+	position: relative;
+	height: 50px;
+	box-sizing: border-box;
+	border: none;
+	padding: 15px 15px 15px 55px;
+	text-align: left;
+	background-color: transparent;
+}
+.a9os_app_adminrecibos_admin_empleados .empleado .buttons{
+	margin-top: 10px;
+	height: 40px;
+	text-align: center;
+}
+.a9os_app_adminrecibos_admin_empleados .empleado .buttons .btn {
+	display: inline-block;
+	width: 40%;
+}
+
+.a9os_app_adminrecibos_admin_empleados .empleado.filtered {
+	padding: 0;
+	margin: 0;
+	width: 0;
+	height: 0!important;
+	opacity: 0;
+	visibility: hidden;
+}
+
+cmp.a9os_app_adminrecibos_admin_empleados .search-not-found {
+	display: block;
+	position: relative;
+	text-align: center;
+	color: #666;
+	font-size: 12px;
+	display: none;
+}
+cmp.a9os_app_adminrecibos_admin_empleados .search-not-found.show {
+	display: block;
+}

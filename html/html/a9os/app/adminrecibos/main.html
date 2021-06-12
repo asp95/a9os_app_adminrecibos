@@ -1,0 +1,167 @@
+<!--_gtlsc_
+	os.com.ar (a9os) - Open web LAMP framework and desktop environment
+	Copyright (C) 2019-2021  Santiago Pereyra (asp95)
+	
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.-->
+<div class="toolbar">
+	<div class="file-section">
+		<div class="file-buttons">
+			<button class="btn new-file" title="Nuevo proyecto (Ctrl+Shift+F)">Nuevo</button>
+			<button class="btn open-file" title="Abrir proyecto (Ctrl+O)">Abrir</button>
+			<button class="btn save-file" title="Guardar proyecto (Ctrl+S)" disabled="true">Guardar</button>
+			<button class="btn export-pdf" title="Exportar PDF" disabled="true">Exportar</button>
+		</div>
+	</div>
+	<div class="pages-section">
+		<div class="paginas">
+			Recibo
+			<br>
+			<span class="qty">
+				<span class="curr-page">0</span> / <span class="total-pages">0</span>
+			</span>
+		</div>
+		<div class="buttons">
+			<button class="btn prev"></button>
+			<button class="btn next"></button>
+			<br>
+			<button class="btn delete" title="Borrar recibo">Borrar</button>
+		</div>
+	</div>
+</div>
+<div class="section empresa">
+	<span>Seleccionar empresa: </span> <select class="empresa-selector" data-foreach="empresas:empresa">
+			<option data-preventloop="true" selected="selected" disabled="true" data-data="empresa:currEmpresa.allData" value="0">Seleccione</option>
+			<option data-value="empresa.id" data-textcontent="empresa.nombre"></option>
+		</select>
+</div>
+<div class="section empleado">
+	<input type="text" placeholder="Buscar Empleado..." disabled="true">
+	<div class="empleado-selected" data-data="alldata:empleado.allData">
+		<div class="line">
+			<div class="title">Legajo: </div>
+			<span class="value" data-textcontent="empleado.legajo"></span>
+		</div>
+		<div class="line">
+			<div class="title">Nombre: </div>
+			<span class="value" data-textcontent="empleado.nombre"></span>
+		</div>
+		<div class="line">
+			<div class="title">CUIL: </div>
+			<span class="value" data-textcontent="empleado.cuil"></span>
+		</div>
+		<div class="line">
+			<div class="title">Fecha de Ingreso: </div>
+			<span class="value" data-textcontent="empleado.fecha_ingreso"></span>
+		</div>
+		<div class="line">
+			<div class="title">Antiguedad: </div>
+			<span class="value" data-textcontent="empleado.antiguedad"></span>
+		</div>
+		<div class="line">
+			<div class="title">Remun. Básica: </div>
+			<span class="value remuneracion-basica" data-textcontent="empleado.remuneracion_basica"></span>
+		</div>
+		<div class="line">
+			<div class="title">Categoría: </div>
+			<span class="value" data-textcontent="empleado.categoria"></span>
+		</div>
+	</div>
+</div>
+<div class="section banco">
+	<div class="item periodoliq">
+		Periodo Liquidado:
+		<input type="text" class="periodoliq" data-value="banco.periodoliq">
+	</div>
+	<div class="item">
+		Banco:
+		<input type="text" class="banco" data-value="banco.banco">
+	</div>
+	<div class="item">
+		Periodo:
+		<input type="text" class="periodo" data-value="banco.periodo">
+	</div>
+	<div class="item">
+		Fecha:
+		<input type="date" class="fecha" data-value="banco.fecha">
+	</div>
+	<div class="item fl">
+		Fecha y lugar de pago: <br>
+		<input type="date" class="fechaPago" data-value="banco.fechaPago">
+		<input type="text" class="lugarPago" data-value="banco.lugarPago">
+	</div>
+</div>
+<div class="section conceptos">
+	<div class="title">Conceptos:</div>
+	<button class="btn add-new" disabled="true">Crear Concepto</button>
+	<table>
+		<thead>
+			<tr>
+				<th class="codigo">Código</th>
+				<th class="detalle">Detalle</th>
+				<th class="cantidad">Cantidad</th>
+				<th class="remuneracion">Remuneraciones</th>
+				<th class="deduccion">Deducciones</th>
+				<th class="buttons"></th>
+			</tr>
+		</thead>
+		<tbody data-foreach="conceptos:currConcepto">
+			<tr data-data="index:currConcepto.index">
+				<td class="id" data-textcontent="currConcepto.id"></td>
+
+				<td class="detalle" data-textcontent="currConcepto.detalle"></td>
+
+				<td class="cantidad">
+					<span data-textcontent="currConcepto.cantidad"></span>
+					<input type="number" data-value="currConcepto.cantidad">
+					<button class="btn submit" data-type="cantidad">Ok</button>
+				</td>
+
+				<td class="remuneracion">
+					<span data-textcontent="currConcepto.remuneracion"></span>
+					<input type="number" data-value="currConcepto.remuneracionInt">
+					<button class="btn submit" data-type="remuneracion">Ok</button>
+				</td>
+
+				<td class="deduccion">
+					<span data-textcontent="currConcepto.deduccion"></span>
+					<input type="number" data-value="currConcepto.deduccionInt">
+					<button class="btn submit" data-type="deduccion">Ok</button>
+				</td>
+
+				<td class="buttons">
+					<button class="btn borrar" data-data="index:currConcepto.index" title="Borrar">
+						<span>×</span>
+					</button>
+				</td>
+			</tr>
+			<tr data-preventloop="true" class="total">
+				<td class="id"></td>
+				<td class="detalle"><b>Total</b></td>
+				<td class="cantidad"></td>
+				<td class="remuneracion" data-textcontent="total.remuneracion">--</td>
+				<td class="deduccion" data-textcontent="total.deduccion">--</td>
+				<td class="buttons" data-textcontent="total.neto">--</td>
+			</tr>
+			<tr data-preventloop="true" class="total">
+				<td class="id"></td>
+				<td class="detalle" colspan="5"><b data-textcontent="total.netoTexto"></b></td>
+			</tr>
+			<tr data-preventloop="true" class="add">
+				<td class="detalle" colspan="6">
+					<input type="text" class="search" placeholder="Buscar Concepto...">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,374 @@
+/*_gtlsc_
+ * os.com.ar (a9os) - Open web LAMP framework and desktop environment
+ * Copyright (C) 2019-2021  Santiago Pereyra (asp95)
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.*/
+cmp.a9os_app_adminrecibos_main {
+	display: block;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	overflow: auto;
+}
+cmp.a9os_app_adminrecibos_main .toolbar {
+	display: block;
+	position: relative;
+	width: 100%;
+	background-color: #eee;
+	font-size: 0;
+	padding: 5px;
+	box-sizing: border-box;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	border-top: 1px solid #a0a06a;
+}
+cmp.a9os_app_adminrecibos_main .toolbar > * {
+	display: inline-block;
+	vertical-align: middle;
+	width: 50%;
+	margin: 0;
+	box-sizing: border-box;
+}
+cmp.a9os_app_adminrecibos_main .toolbar .file-section {
+	position: relative;
+	font-size: 14px;
+	color: #222;
+	text-align: left;
+	width: calc(100% - 150px);
+}
+
+cmp.a9os_app_adminrecibos_main .toolbar .file-section .file-buttons {
+	display: block;
+	position: relative;
+	width: 100%;
+	padding: 5px;
+	box-sizing: border-box;
+}
+cmp.a9os_app_adminrecibos_main .toolbar .file-section .file-buttons .btn {
+	display: inline-block;
+	height: 30px;
+	margin: 2px;
+	box-sizing: border-box;
+	padding: 5px 5px 5px 30px;
+	background: #fff url() center left no-repeat;
+	background-size: contain;
+}
+cmp.a9os_app_adminrecibos_main .toolbar .file-section .file-buttons .btn.new-file {
+	background-image: url(/resources/a9os/img/toolbar/new-file.svg);
+}
+cmp.a9os_app_adminrecibos_main .toolbar .file-section .file-buttons .btn.open-file {
+	background-image: url(/resources/a9os/img/toolbar/open-file.svg);
+}
+cmp.a9os_app_adminrecibos_main .toolbar .file-section .file-buttons .btn.save-file {
+	background-image: url(/resources/a9os/img/toolbar/save-file.svg);
+}
+cmp.a9os_app_adminrecibos_main .toolbar .file-section .file-buttons .btn.save-as-file{
+	background-image: url(/resources/a9os/img/toolbar/save-as-file.svg);
+}
+cmp.a9os_app_adminrecibos_main .toolbar .file-section .file-buttons .btn.export-pdf{
+	background-image: url(/resources/a9os/app/adminrecibos/export-pdf.svg);
+}
+.is-mobile cmp.a9os_app_adminrecibos_main .toolbar .file-section .file-buttons .btn {
+	font-size: 0;
+	width: 30px;
+	padding: 5px;
+}
+cmp.a9os_app_adminrecibos_main .toolbar .pages-section {
+	text-align: center;
+	width: 150px;
+}
+cmp.a9os_app_adminrecibos_main .toolbar .pages-section .paginas {
+	display: inline-block;
+	font-size: 12px;
+	box-sizing: border-box;
+	vertical-align: middle;
+	width: 75px;
+}
+
+cmp.a9os_app_adminrecibos_main .toolbar .pages-section .paginas .qty {
+	font-size: 20px;
+}
+cmp.a9os_app_adminrecibos_main .toolbar .pages-section .buttons {
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: middle;
+	width: 75px;
+}
+cmp.a9os_app_adminrecibos_main .toolbar .pages-section .buttons *[disabled] {
+	opacity: 0.5;
+}
+cmp.a9os_app_adminrecibos_main .toolbar .pages-section .buttons .prev,
+cmp.a9os_app_adminrecibos_main .toolbar .pages-section .buttons .next {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 2.5px;
+	border: none;
+	box-shadow: none;
+	font-size: 25px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 40px;
+	padding: 0;
+	transition: all 0.1s;
+}
+cmp.a9os_app_adminrecibos_main .toolbar .pages-section .buttons .prev:hover,
+cmp.a9os_app_adminrecibos_main .toolbar .pages-section .buttons .next:hover {
+	background-color: rgba(0,0,0,0.1);
+	box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+}
+cmp.a9os_app_adminrecibos_main .toolbar .pages-section .buttons .prev {
+	background: url(/resources/a9os/app/adminrecibos/lt-icon.svg) center center no-repeat;
+	background-size: contain;
+}
+cmp.a9os_app_adminrecibos_main .toolbar .pages-section .buttons .next {
+	background: url(/resources/a9os/app/adminrecibos/gt-icon.svg) center center no-repeat;
+	background-size: contain;
+}
+cmp.a9os_app_adminrecibos_main .toolbar .pages-section .buttons .next.new-page {
+	background: url(/resources/a9os/app/adminrecibos/newpage-icon.svg) center center no-repeat;
+	background-size: contain;
+}
+cmp.a9os_app_adminrecibos_main .toolbar .pages-section .buttons .delete {
+	display: inline-block;
+	width: 60%;
+	padding: 0;
+	color: #fff;
+	border: none;
+	box-shadow: none;
+	background-color: transparent;
+	transition: all 0.1s;
+	color: #444;
+}
+cmp.a9os_app_adminrecibos_main .toolbar .pages-section .buttons .delete:hover {
+	background-color: #981f1f;
+	box-shadow: 0 0 0 2px #981f1f;
+	color: #fff;
+}
+
+
+
+cmp.a9os_app_adminrecibos_main .section {
+	display: block;
+	box-sizing: border-box;
+	shape-image-threshold: 100%;
+	padding: 20px;
+	font-size: 12px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+cmp.a9os_app_adminrecibos_main .section.proyecto {
+	font-size: 12px;
+	padding: 10px 5%;
+	box-sizing: border-box;
+	position: relative;
+}
+cmp.a9os_app_adminrecibos_main .section.empleado {
+	font-size: 0;
+	text-align: left;
+}
+cmp.a9os_app_adminrecibos_main .section.empleado input {
+	box-sizing: border-box;
+	padding: 10px;
+	display: inline-block;
+	width: 100%;
+	border: none;
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+cmp.a9os_app_adminrecibos_main .section.empleado input:disabled {
+	cursor: not-allowed!important;
+}
+
+cmp.a9os_app_adminrecibos_main .section.empleado .empleado-selected {
+	display: inline-block;
+	background-color: #feffd2;
+	position: relative;
+	box-sizing: border-box;
+	width: 96%;
+	margin-left: 2%;
+	margin-top: 15px;
+	vertical-align: middle;
+	box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
+	opacity: 0;
+	visibility: hidden;
+	height: 0;
+	padding: 0px 5px;
+	transform: translateY(-10px);
+	transition: all 0.1s;
+}
+cmp.a9os_app_adminrecibos_main .section.empleado .empleado-selected.show {
+	opacity: 1;
+	visibility: visible;
+	padding: 5px;
+	height: auto;
+	transform: translateY(0);
+}
+.is-mobile cmp.a9os_app_adminrecibos_main .section.empleado .empleado-selected.show{
+	display: block;
+	width: 96%;
+}
+cmp.a9os_app_adminrecibos_main .section.empleado .empleado-selected .line {
+	font-size: 12px;
+	display: inline-block;
+	width: 50%;
+	vertical-align: top;
+	position: relative;
+	margin: 4px 0;
+}
+cmp.a9os_app_adminrecibos_main .section.empleado .empleado-selected .line .title {
+	font-weight: bold;
+}
+
+
+cmp.a9os_app_adminrecibos_main .bottom {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px ;
+	color: #fff;
+	border-top: 1px solid rgba(0,0,0,0.2);
+	background-color: rgba(40, 40, 10, 0.8);
+}
+cmp.a9os_app_adminrecibos_main .bottom .paginas {
+	display: block;
+	float: left;
+	text-align: left;
+	font-size: 12px;
+	margin: 5px;
+}
+cmp.a9os_app_adminrecibos_main .bottom .buttons {
+	text-align: right;
+	display: block;
+	float: right;
+	margin: 5px;
+} 
+cmp.a9os_app_adminrecibos_main .section.banco {
+	text-align: center;
+	padding: 5px;
+}
+cmp.a9os_app_adminrecibos_main .section.banco .item {
+	display: inline-block;
+	font-size: 12px;
+	line-height: 14px;
+	vertical-align: top;
+	width: 22%;
+	min-width: 120px;
+	margin: 5px;
+	text-align: left;
+}
+cmp.a9os_app_adminrecibos_main .section.banco .item.periodoliq {
+	width: 75%;
+	margin: 5px 12%;
+}
+cmp.a9os_app_adminrecibos_main .section.banco .item input {
+	width: 100%;
+	line-height: 20px;
+	box-sizing: border-box;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 3px;
+	margin: 1px;
+}
+cmp.a9os_app_adminrecibos_main .section.banco .item.fl {
+	font-size: 12px;
+	line-height: 14px;
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos {
+	padding: 10px 20px 20px;
+    overflow-x: auto;
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos .title {
+	display: block;
+	position: relative;
+	line-height: 20px;
+	margin-bottom: 10px;
+	float: left;
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos .btn.add-new {
+	margin: 0;
+	float: right;
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos table {
+	width: 100%;
+	font-size: 12px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos table tr td,
+cmp.a9os_app_adminrecibos_main .section.conceptos table tr th {
+	border: 1px solid #bbb;
+	padding: 5px;
+}
+
+cmp.a9os_app_adminrecibos_main .section.conceptos tbody .deduccion .btn {
+	margin-top: 10px;
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos td.editable {
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.1);
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos td.editable::before {
+	content: "Seleccionar...";
+	font-size: 8px;
+	display: block;
+	color: #999;
+}
+
+cmp.a9os_app_adminrecibos_main .section.conceptos td.cantidad {
+	text-align: center;
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos td.cantidad input {
+	width: 50px;
+}
+
+cmp.a9os_app_adminrecibos_main .section.conceptos td:not(.buttons) button {
+	display: none;
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos td span {
+	display: block;
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos tr:not(.add) td input {
+	display: none;
+}
+
+cmp.a9os_app_adminrecibos_main .section.conceptos tr td.edit input {
+	display: inline-block;
+	border: none;
+	border-radius: 3px;
+	line-height: 22px;
+	text-align: center;
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos tr td.edit button {
+	display: inline-block;
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos tr td.edit span {
+	display: none;
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos tr.total, cmp.a9os_app_adminrecibos_main .section.conceptos thead tr{
+	background-color: rgba(255,255,255,1);
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos tr.add {
+	background-color: #606132;
+}
+cmp.a9os_app_adminrecibos_main .section.conceptos tr.add input {
+	margin: 5px;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+	box-sizing: border-box;
+	padding: 5px 10px;
+}
