@@ -1,6 +1,6 @@
 # Admin. de Recibos
 
-![cap1](/resources/a9os/app/adminrecibos/readme-caps/cap1.png?raw=true)
+![cap1](/html/resources/a9os/app/adminrecibos/readme-caps/cap1.png?raw=true)
 
 ## Instalación
 Agregar repositorio a la plataforma
@@ -15,7 +15,7 @@ Entrar a **/app-installer**
 
 Buscar la aplicación **"Admin. de recibos"**, hacer click en **Instalar** e ingresar la System Key
 
-![cap2](/resources/a9os/app/adminrecibos/readme-caps/cap2.png?raw=true)
+![cap2](/html/resources/a9os/app/adminrecibos/readme-caps/cap2.png?raw=true)
 
 
 ---
